@@ -2,10 +2,10 @@ import tkinter as tk
 from tkinter import messagebox
 import subprocess
 
-# 🔧 Python path (your virtual env)
+#Python path for ENVIRONMENT
 PYTHON_PATH = "new_env\\Scripts\\python"
 
-# ---------- FUNCTIONS ----------
+#functions
 
 def run_script(script_name):
     try:
@@ -29,14 +29,14 @@ def exit_app():
     if messagebox.askyesno("Exit", "Exit application?"):
         root.destroy()
 
-# ---------- MAIN WINDOW ----------
+#Main GUI Window
 
 root = tk.Tk()
 root.title("Smart Attendance System")
 root.geometry("520x540")
 root.configure(bg="#0f172a")
 
-# ---------- HEADER ----------
+#header
 
 header = tk.Frame(root, bg="#0f172a")
 header.pack(pady=30)
@@ -57,12 +57,12 @@ tk.Label(
     bg="#0f172a"
 ).pack()
 
-# ---------- BUTTON FRAME ----------
+#button style's!
 
 frame = tk.Frame(root, bg="#0f172a")
 frame.pack(pady=10)
 
-# 🎨 Modern Button with subtitle (lore)
+#Modern Button with subtitle for the lore in the APP GUI
 def modern_button(text, command, color, subtitle=None):
     container = tk.Frame(frame, bg="#0f172a")
     container.pack(pady=8)
@@ -90,7 +90,7 @@ def modern_button(text, command, color, subtitle=None):
 
     btn.pack()
 
-    # 🔥 Subtitle (lore)
+    #Subtitle as a lore
     if subtitle:
         tk.Label(
             container,
@@ -100,7 +100,7 @@ def modern_button(text, command, color, subtitle=None):
             bg="#0f172a"
         ).pack(pady=2)
 
-# ---------- BUTTONS ----------
+#button
 
 modern_button(
     "Register Student",
@@ -136,7 +136,7 @@ modern_button(
     "#dc2626"
 )
 
-# ---------- FOOTER ----------
+#footer
 
 tk.Label(
     root,
@@ -146,6 +146,6 @@ tk.Label(
     bg="#0f172a"
 ).pack(side="bottom", pady=15)
 
-# ---------- RUN ----------
+#run
 
 root.mainloop()

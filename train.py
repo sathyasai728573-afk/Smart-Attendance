@@ -2,7 +2,7 @@ import os
 import face_recognition
 import pickle
 
-# 📁 Dataset path
+#dataset path
 DATASET_PATH = "Z:/GRADEPROJ/dataset"
 
 encodings = []
@@ -10,7 +10,7 @@ ids = []
 names = []
 classes = []
 
-print("🔄 Training started...")
+print("Training Has Been Started")
 
 for class_name in os.listdir(DATASET_PATH):
     class_path = os.path.join(DATASET_PATH, class_name)
@@ -25,10 +25,10 @@ for class_name in os.listdir(DATASET_PATH):
             continue
 
         try:
-            # 📌 Format: 10A001_SATHYA
+            #like in form: 10A001_SATHYA
             student_id, name = folder_name.split("_", 1)
         except:
-            print(f"⚠️ Skipping invalid folder: {folder_name}")
+            print(f" Skipping invalid folder: {folder_name}")
             continue
 
         for image_name in os.listdir(person_path):
@@ -44,12 +44,12 @@ for class_name in os.listdir(DATASET_PATH):
                     names.append(name)
                     classes.append(class_name)
 
-                    print(f"✅ Encoded: {student_id} - {name} ({class_name})")
+                    print(f" Encoded: {student_id} - {name} ({class_name})")
 
             except Exception as e:
-                print(f"❌ Error processing {image_path}: {e}")
+                print(f" Error processing {image_path}: {e}")
 
-# 💾 Save data
+#save data
 data = {
     "encodings": encodings,
     "ids": ids,
@@ -60,5 +60,5 @@ data = {
 with open("encodings.pkl", "wb") as f:
     pickle.dump(data, f)
 
-print("\n🎉 Training completed successfully!")
+print("\n Training completed successfully!")
 print(f"Total faces encoded: {len(encodings)}")

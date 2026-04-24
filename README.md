@@ -21,7 +21,7 @@ https://github.com/sathyasai728573-afk/Smart-Attendance
 - dlib
 
 ## Project Structure
-.
+
 ├── capture.py  
 ├── train.py  
 ├── encodings.pkl  
